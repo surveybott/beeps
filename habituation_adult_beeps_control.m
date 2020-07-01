@@ -456,7 +456,8 @@ for i = 1:length(pspmSet)
     trimmedFull = [];
     trimmedTen = [];
     for k = 1:length(trimmed(1,:))
-        trimmed(:,k) = sliding_window(trimmed(:,k),250);
+        %trimmed(:,k) = sliding_window(trimmed(:,k),250);
+        trimmed(:,k) = smooth(trimmed(:,k),10);
         trimmedFull = [trimmedFull;trimmed(:,k)];
     end
     
